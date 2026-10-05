@@ -1,5 +1,10 @@
-# GozaGames domain root
+# Goza Interactive
 
-Hosts the AdMob-authorized seller record at https://rgoza1996.github.io/app-ads.txt. The main developer website remains https://rgoza1996.github.io/gozagames/.
+Public GitHub Pages home for **Goza Interactive**, the umbrella for Goza Games and Goza Labs.
 
-Seller record copied from AdMob's personalized setup dialog on September 30, 2026. App-store linkage and AdMob verification remain separate steps after the app has a store listing.
+- Main site: https://rgoza1996.github.io/
+- Goza Games: https://rgoza1996.github.io/gozagames/
+- Goza Labs: https://rgoza1996.github.io/gozalabs/
+- AdMob seller record: https://rgoza1996.github.io/app-ads.txt
+
+The root `app-ads.txt` remains in place for the Sudoku by Rogie Android publishing setup.
