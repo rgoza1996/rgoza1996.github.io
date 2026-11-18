@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="text-scale" content="scale">
+  <meta name="color-scheme" content="light dark">
+  <script>try{const s=localStorage.getItem("color-scheme");if(s==="light"||s==="dark")document.querySelector("meta[name=\"color-scheme\"]").content=s;}catch{}</script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCF9F2">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151310">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ZV62QEBcRpEGfPKCC1icWMtMogYELaRWrcXrfesczKY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Page Not Found | Goza Interactive</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/site.js"></script>
+</head>
+<body class="interactive-hub">
+<a id="skip-to-main" class="skip-link visually-hidden" href="#not-found-title">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a id="nav-404-home" class="wordmark" href="/">
+      <svg class="brand-compass" aria-hidden="true" viewBox="0 0 32 32">
+        <polygon points="16,4 6,16 16,28 16,16" fill="var(--accent-mark)" />
+        <polygon points="16,4 26,16 16,28 16,16" fill="var(--labs)" />
+      </svg>
+      Goza Interactive
+    </a>
+    <div class="header-controls">
+      <nav class="header-nav" aria-label="Primary">
+        <a id="nav-404-games" href="/gozagames/">Goza Games</a>
+        <a id="nav-404-labs" href="/gozalabs/">Goza Labs</a>
+      </nav>
+      <button id="theme-toggle-btn" class="theme-toggle" type="button" data-theme-toggle>
+        <span class="when-light">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <span>Dark<span class="visually-hidden"> theme</span></span>
+        </span>
+        <span class="when-dark">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span>Light<span class="visually-hidden"> theme</span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="gateway-hero" aria-labelledby="not-found-title">
+    <span class="rubric">404 · Route Not Found</span>
+    <h1 id="not-found-title" tabindex="-1">That page isn’t at this address.</h1>
+    <p class="hero-lead">Choose where you’d like to go inside Goza Interactive:</p>
+    <div class="actions">
+      <a id="cta-404-hub" class="button" href="/">Goza Interactive Home</a>
+      <a id="cta-404-games" class="button secondary" href="/gozagames/">Goza Games</a>
+      <a id="cta-404-labs" class="button secondary" href="/gozalabs/">Goza Labs</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div><span class="footer-name">Goza Interactive</span></div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/gozagames/sudoku/privacy/">Sudoku Privacy</a>
+        <a href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

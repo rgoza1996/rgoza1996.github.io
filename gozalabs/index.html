@@ -2,70 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0f1115">
-  <meta name="description" content="Goza Labs: AI, agents, creative technology, and experimental software from Goza Interactive.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="text-scale" content="scale">
+  <meta name="color-scheme" content="light dark">
+  <script>try{const s=localStorage.getItem("color-scheme");if(s==="light"||s==="dark")document.querySelector("meta[name=\"color-scheme\"]").content=s;}catch{}</script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCF9F2">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151310">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'inline-speculation-rules' 'sha256-ZV62QEBcRpEGfPKCC1icWMtMogYELaRWrcXrfesczKY=' 'sha256-umyWb3MhAybDYKUi7iaU3at3QjfuktpXma5m3rOjI3w='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="description" content="Goza Labs: local-first AI systems, agent harnesses, creative production tooling, and desktop utilities under Goza Interactive.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Goza Labs | Goza Interactive">
+  <meta property="og:description" content="AI, agents, creative technology, and desktop utilities from Goza Interactive.">
+  <meta property="og:url" content="https://rgoza1996.github.io/gozalabs/">
+  <link rel="canonical" href="https://rgoza1996.github.io/gozalabs/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <title>Goza Labs | Goza Interactive</title>
   <link rel="stylesheet" href="../style.css">
+  <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*assets/*"}},{"not":{"href_matches":"/app-ads.txt"}}]},"eagerness":"moderate"}]}</script>
+  <script type="module" src="../site.js"></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-  <div class="shell nav">
-    <a class="brand" href="../"><span class="brand-dot" aria-hidden="true"></span>Goza Labs</a>
-    <nav aria-label="Main">
-      <a href="../">Goza Interactive</a>
-      <a href="../gozagames/">Goza Games</a>
-      <a href="mailto:rogiegoza@gmail.com">Contact</a>
-    </nav>
+<body class="labs-page">
+<a id="skip-to-main" class="skip-link visually-hidden" href="#labs-title">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a id="nav-labs-wordmark" class="wordmark" href="./" aria-current="page">
+      <span class="brand-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      Goza Labs
+    </a>
+    <div class="header-controls">
+      <nav class="header-nav" aria-label="Primary">
+        <a id="nav-labs-autoshot" href="./autoshot/">AutoShot</a>
+        <a id="nav-labs-kinaiya" href="./kinaiya/">Kinaiya</a>
+        <a id="nav-labs-games" href="../gozagames/">Goza Games</a>
+        <a id="nav-labs-hub" href="../">← Goza Interactive</a>
+        <a id="nav-labs-contact" href="mailto:rogiegoza@gmail.com">Contact</a>
+      </nav>
+      <button id="theme-toggle-btn" class="theme-toggle" type="button" data-theme-toggle>
+        <span class="when-light">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <span>Dark<span class="visually-hidden"> theme</span></span>
+        </span>
+        <span class="when-dark">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span>Light<span class="visually-hidden"> theme</span></span>
+        </span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main id="main">
-  <section class="shell lab-hero">
-    <p class="kicker">Goza Interactive · Labs</p>
-    <h1>AI, agents, and creative technology.</h1>
-    <p class="lede">Goza Labs is the non-gaming side of Goza Interactive: local AI systems, agent experiments, production tooling, and software research.</p>
+<main id="main" class="wrap">
+  <section class="gateway-hero" aria-labelledby="labs-title">
+    <span class="rubric labs-rubric">A Goza Interactive Division</span>
+    <h1 id="labs-title" tabindex="-1">AI, agents, and creative technology.</h1>
+    <p class="hero-lead">Goza Labs is the software and research lane of Goza Interactive: local-first AI platforms, agent coordination harnesses, portable desktop tools, and audiovisual production pipelines.</p>
+    <div class="actions">
+      <a id="labs-cta-autoshot" class="button" href="./autoshot/">Explore AutoShot</a>
+      <a id="labs-cta-kinaiya" class="button secondary" href="./kinaiya/">Explore Kinaiya</a>
+    </div>
   </section>
 
-  <section class="shell projects" aria-label="Goza Labs projects">
-    <article class="project">
-      <div class="status">Released · v1.0.1</div>
+  <section id="projects" class="studio-section" aria-labelledby="labs-projects-heading">
+    <div class="section-heading">
       <div>
-        <h2>AutoShot</h2>
-        <p>A free desktop utility for Windows and Linux that presses an arrow key or scrolls a window, takes a screenshot after each step, and stops by itself when the page stops changing. It can capture a window, the screen, or a region you draw, and save as PNG, JPG, PDF, and more.</p>
+        <span class="eyebrow labs-eyebrow">Directory</span>
+        <h2 id="labs-projects-heading">Released tools &amp; active R&amp;D.</h2>
       </div>
-      <a class="project-link" href="./autoshot/">View AutoShot →</a>
-    </article>
+      <p class="section-summary">Software built outside the game label—focused on local execution, reliability, and low-friction workflows.</p>
+    </div>
 
-    <article class="project">
-      <div class="status">In development</div>
-      <div>
-        <h2>Kinaiya</h2>
-        <p>Kinaiya is in development as a local-first AI platform pairing expressive real-time voice with an independent agent for useful work. Its research scope includes shared-transcript coordination and an adaptive executable harness. The hackathon target is a focused voice-and-agent demo with a verified Meta integration, subject to event requirements and account access.</p>
+    <div class="labs-ledger">
+      <div class="card-slot" id="autoshot">
+        <article class="lab-project">
+          <div>
+            <span class="lane-badge labs">Released · v1.1.0</span>
+          </div>
+          <div>
+            <h2><a id="labs-title-autoshot" class="card-link" href="./autoshot/">AutoShot</a></h2>
+            <p>A free desktop utility for Windows and Linux that presses an arrow key or scrolls a window, captures a screenshot after each step, and stops automatically when the page stops changing. Supports full-window, content-area, full-screen, or custom drawn regions in PNG, JPG, PDF, and more.</p>
+          </div>
+          <div class="lab-actions">
+            <a id="labs-open-autoshot" class="button" href="./autoshot/">Project page<span class="visually-hidden"> for AutoShot</span> →</a>
+            <a id="labs-sf-autoshot" class="button secondary" href="https://sourceforge.net/projects/autoshot/" rel="noopener">SourceForge</a>
+          </div>
+        </article>
       </div>
-      <a class="project-link" href="https://github.com/rgoza1996/Kinaiya">View repository →</a>
-    </article>
 
-    <article class="project">
-      <div class="status">Private development</div>
-      <div>
-        <h2>ProductionPipeline</h2>
-        <p>An AI-assisted creative production workflow for adapting rights-cleared narrative work into researched film and other audiovisual outputs, with structured planning, review gates, and production tooling.</p>
+      <div class="card-slot" id="kinaiya">
+        <article class="lab-project">
+          <div>
+            <span class="lane-badge labs">In development</span>
+          </div>
+          <div>
+            <h2><a id="labs-title-kinaiya" class="card-link" href="./kinaiya/">Kinaiya</a></h2>
+            <p>A local-first AI platform pairing expressive real-time voice with an independent agent for useful work. Research scope includes shared-transcript coordination, adaptive executable harnesses, and low-latency voice interaction.</p>
+          </div>
+          <div class="lab-actions">
+            <a id="labs-open-kinaiya" class="button" href="./kinaiya/">Project page<span class="visually-hidden"> for Kinaiya</span> →</a>
+            <a id="labs-repo-kinaiya" class="button secondary" href="https://github.com/rgoza1996/Kinaiya" rel="noopener">GitHub repo</a>
+          </div>
+        </article>
       </div>
-      <span></span>
-    </article>
+
+      <div class="card-slot" id="production-pipeline">
+        <article class="lab-project">
+          <div>
+            <span class="lane-badge labs">Private R&amp;D</span>
+          </div>
+          <div>
+            <h2><a id="labs-title-pipeline" class="card-link" href="./production-pipeline/">ProductionPipeline</a></h2>
+            <p>An AI-assisted creative production workflow for adapting rights-cleared narrative work into researched film and audiovisual outputs, built around structured planning, human review gates, and deterministic production tooling.</p>
+          </div>
+          <div class="lab-actions">
+            <a id="labs-open-pipeline" class="button secondary" href="./production-pipeline/">Project page<span class="visually-hidden"> for ProductionPipeline</span> →</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section class="shell">
-    <p class="lab-note">More experimental software will appear here as projects become ready for public release. Goza Labs does not imply that every project is open source.</p>
+  <section class="studio-section" aria-label="Publishing note">
+    <p class="lab-note">More experimental software appears here as projects become ready for public release. Listing under Goza Labs does not imply that every project is open source. Looking for games and mods? Visit <a id="labs-note-games" href="../gozagames/">Goza Games</a>.</p>
   </section>
 </main>
 
-<footer>
-  <div class="shell footer-row">
-    <div><strong>Goza Labs</strong><br><span>A Goza Interactive division</span></div>
-    <div><a href="../">Goza Interactive</a> · <a href="../gozagames/">Goza Games</a> · <a href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div><span class="footer-name">Goza Labs</span> &nbsp; · &nbsp; A Goza Interactive division</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a id="labs-footer-hub" href="../">Goza Interactive</a>
+        <a id="labs-footer-games" href="../gozagames/">Goza Games</a>
+        <a id="labs-footer-email" href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a>
+      </nav>
+    </div>
   </div>
 </footer>
 </body>

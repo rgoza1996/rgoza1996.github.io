@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .frame { fill: #F7F1E6; stroke: #9A6524; stroke-width: 3; }
+    .facet-games { fill: #9A6524; }
+    .facet-labs { fill: #1A5C52; }
+    @media (prefers-color-scheme: dark) {
+      .frame { fill: #1E1B17; stroke: #E2B06D; }
+      .facet-games { fill: #E2B06D; }
+      .facet-labs { fill: #74D4C3; }
+    }
+  </style>
+  <rect class="frame" x="6" y="6" width="52" height="52" rx="13" />
+  <polygon class="facet-games" points="32,15 17,32 32,49 32,32" />
+  <polygon class="facet-labs" points="32,15 47,32 32,49 32,32" />
+</svg>

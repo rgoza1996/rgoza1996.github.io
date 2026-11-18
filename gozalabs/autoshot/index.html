@@ -2,164 +2,311 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0f1115">
-  <meta name="description" content="AutoShot by Goza Labs: automatic page-by-page screenshots for Windows and Linux. Press a key or scroll, capture, repeat, and stop when the page ends.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="text-scale" content="scale">
+  <meta name="color-scheme" content="light dark">
+  <script>try{const s=localStorage.getItem("color-scheme");if(s==="light"||s==="dark")document.querySelector("meta[name=\"color-scheme\"]").content=s;}catch{}</script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCF9F2">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151310">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'inline-speculation-rules' 'sha256-ZV62QEBcRpEGfPKCC1icWMtMogYELaRWrcXrfesczKY=' 'sha256-umyWb3MhAybDYKUi7iaU3at3QjfuktpXma5m3rOjI3w='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="description" content="AutoShot by Goza Labs: automatic page-by-page screenshots for Windows and Linux. Download on SourceForge for PNG, JPG, and single-file PDF capture.">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="AutoShot | Goza Labs">
-  <meta property="og:description" content="Automatic page-by-page screenshots for Windows and Linux.">
-  <meta property="og:image" content="https://rgoza1996.github.io/gozalabs/autoshot/assets/autoshot-logo.png">
+  <meta property="og:description" content="Automatic page-by-page screenshots for Windows and Linux. Available on SourceForge.">
+  <meta property="og:url" content="https://rgoza1996.github.io/gozalabs/autoshot/">
+  <meta property="og:image" content="https://rgoza1996.github.io/gozalabs/autoshot/assets/autoshot-logo.webp">
+  <link rel="canonical" href="https://rgoza1996.github.io/gozalabs/autoshot/">
+  <link rel="icon" type="image/webp" href="./assets/autoshot-logo.webp">
   <title>AutoShot | Goza Labs</title>
-  <link rel="icon" type="image/png" href="./assets/autoshot-logo.png">
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    .app-hero{padding:80px 0 56px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-    .app-hero h1{font-size:clamp(3rem,6vw,5rem);margin:.6rem 0 1.2rem}
-    .app-icon{width:220px;height:220px;border-radius:44px;box-shadow:0 30px 80px #39ff7a22,0 10px 30px #0008}
-    .downloads{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:28px}
-    .dl{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel),#13161c);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:6px;text-decoration:none;transition:border-color .15s,transform .15s}
-    .dl:hover{border-color:var(--accent);transform:translateY(-2px)}
-    .dl .os{font-family:Georgia,serif;font-size:1.5rem}
-    .dl .meta{color:var(--muted);font-size:.85rem}
-    .dl .go{margin-top:12px;color:var(--blue);font-weight:700;font-size:.9rem}
-    .small-note{color:var(--muted);font-size:.85rem;padding-bottom:80px}
-    .small-note a{color:var(--blue)}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .feature-grid article{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:24px}
-    .feature-grid h3{font-size:1.3rem}
-    .feature-grid p{color:var(--muted);margin:0;font-size:.95rem}
-    .shots{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;align-items:start}
-    .shots figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
-    .shots img{display:block;width:100%;height:auto}
-    .shots figcaption{padding:12px 16px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
-    .steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px;max-width:820px}
-    .steps li{counter-increment:s;border-top:1px solid var(--line);padding:16px 0 4px 56px;position:relative;color:#d9dce2}
-    .steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:36px;height:36px;border:1px solid var(--accent);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:800;font-size:.9rem}
-    .steps b{color:var(--ink)}
-    code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.88em}
-    pre{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;overflow:auto;font-size:.88rem}
-    @media(max-width:860px){.app-hero{grid-template-columns:1fr}.app-icon{width:140px;height:140px;border-radius:30px;order:-1}.downloads,.feature-grid,.shots{grid-template-columns:1fr}}
-  </style>
+  <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*assets/*"}},{"not":{"href_matches":"/app-ads.txt"}}]},"eagerness":"moderate"}]}</script>
+  <script type="module" src="../../site.js"></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-  <div class="shell nav">
-    <a class="brand" href="../"><span class="brand-dot" aria-hidden="true"></span>Goza Labs</a>
-    <nav aria-label="Main">
-      <a href="../../">Goza Interactive</a>
-      <a href="../">Labs projects</a>
-      <a href="mailto:rogiegoza@gmail.com">Contact</a>
-    </nav>
+<body class="labs-page">
+<a id="skip-to-main" class="skip-link visually-hidden" href="#autoshot-title">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a id="nav-autoshot-labs" class="wordmark" href="../">
+      <span class="brand-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      Goza Labs
+    </a>
+    <div class="header-controls">
+      <nav class="header-nav" aria-label="Primary" data-scrollspy>
+        <a id="nav-as-download" href="#download">Download</a>
+        <a id="nav-as-features" href="#features">Features</a>
+        <a id="nav-as-labs" href="../">All Labs</a>
+        <a id="nav-as-hub" href="../../">← Goza Interactive</a>
+      </nav>
+      <button id="theme-toggle-btn" class="theme-toggle" type="button" data-theme-toggle>
+        <span class="when-light">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <span>Dark<span class="visually-hidden"> theme</span></span>
+        </span>
+        <span class="when-dark">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span>Light<span class="visually-hidden"> theme</span></span>
+        </span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main id="main">
-  <section class="shell app-hero">
+<main id="main" class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumbs">
+    <ol>
+      <li><a id="bc-interactive" href="../../">Goza Interactive</a></li>
+      <li><a id="bc-labs" href="../">Goza Labs</a></li>
+      <li><a id="bc-current" href="./" aria-current="page">AutoShot</a></li>
+    </ol>
+  </nav>
+
+  <section class="app-hero" aria-labelledby="autoshot-title">
     <div>
-      <p class="kicker">Goza Labs · Desktop utility · v1.0.1</p>
-      <h1>AutoShot</h1>
-      <p class="lede">Automatic page-by-page screenshots. AutoShot presses an arrow key or scrolls a window for you, takes a screenshot after each step, and stops by itself when it reaches the end.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="#download">Download free</a>
-        <a class="button" href="https://github.com/rgoza1996/AutoShot-Releases">View on GitHub</a>
+      <span class="rubric labs-rubric">Goza Labs · Desktop Utility · v1.1.0</span>
+      <h1 id="autoshot-title" tabindex="-1">AutoShot</h1>
+      <p class="hero-lead">Automatic page-by-page screenshots. AutoShot presses an arrow key or scrolls a window for you, captures a screenshot after each step, and stops by itself when the page stops changing.</p>
+      <div class="actions">
+        <a id="cta-sourceforge" class="button" href="https://sourceforge.net/projects/autoshot/" rel="noopener">Get AutoShot on SourceForge</a>
+        <a id="cta-download" class="button secondary" href="#download">Platform builds</a>
       </div>
     </div>
-    <img class="app-icon" src="./assets/autoshot-logo.png" alt="AutoShot app icon" width="220" height="220">
+    <img
+      class="app-icon"
+      src="./assets/autoshot-logo.webp"
+      srcset="./assets/autoshot-logo-440w.webp 440w, ./assets/autoshot-logo.webp 512w"
+      sizes="184px"
+      alt="AutoShot aperture camera icon"
+      width="220"
+      height="220"
+      fetchpriority="high"
+      decoding="async">
   </section>
 
-  <section class="shell" id="download" aria-label="Downloads">
-    <div class="downloads">
-      <a class="dl" href="https://github.com/rgoza1996/AutoShot-Releases/releases/latest/download/AutoShot-windows-x64.zip">
-        <span class="tag">Windows</span>
-        <span class="os">Windows 10 / 11</span>
-        <span class="meta">64-bit · .zip · 0.3 MB · no install needed</span>
-        <span class="go">Download for Windows →</span>
-      </a>
-      <a class="dl" href="https://github.com/rgoza1996/AutoShot-Releases/releases/latest/download/AutoShot-linux-x86_64.tar.gz">
-        <span class="tag">Linux</span>
-        <span class="os">Linux x86_64</span>
-        <span class="meta">Intel / AMD · .tar.gz · 33 MB · X11</span>
-        <span class="go">Download for Linux →</span>
-      </a>
-      <a class="dl" href="https://github.com/rgoza1996/AutoShot-Releases/releases/latest/download/AutoShot-linux-aarch64.tar.gz">
-        <span class="tag">Linux</span>
-        <span class="os">Linux ARM64</span>
-        <span class="meta">Raspberry Pi 4/5, ARM laptops · .tar.gz · 17 MB · X11</span>
-        <span class="go">Download for ARM64 →</span>
-      </a>
+  <dl class="project-facts" aria-label="AutoShot details">
+    <div>
+      <dt>Platforms</dt>
+      <dd>Windows 10/11 (x64) &amp; Linux (X11)</dd>
     </div>
-    <p class="small-note">All versions, checksums, and release notes are on the <a href="https://github.com/rgoza1996/AutoShot-Releases/releases">releases page</a>. Linux needs an X11 session (for example "Ubuntu on Xorg"); Wayland blocks the key presses and screenshots AutoShot relies on.</p>
-  </section>
+    <div>
+      <dt>Distribution</dt>
+      <dd>SourceForge (v1.1.0)</dd>
+    </div>
+    <div>
+      <dt>Formats</dt>
+      <dd>PNG, JPG, BMP, TIFF, GIF &amp; PDF</dd>
+    </div>
+    <div>
+      <dt>License</dt>
+      <dd>Free desktop utility</dd>
+    </div>
+  </dl>
 
-  <section class="shell work">
-    <div class="section-head">
-      <p class="kicker">What it does</p>
-      <h2>Stop paging and screenshotting by hand.</h2>
-      <p class="lede">Made for long documents, e-book readers, slide decks, galleries, chat histories, and anything else you would otherwise flip through one screen at a time.</p>
+  <section id="download" class="studio-section" aria-labelledby="download-heading" tabindex="-1">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Downloads</span>
+        <h2 id="download-heading">Portable builds, zero installers.</h2>
+      </div>
+      <p class="section-summary">Hosted on SourceForge with SHA-256 checksums. Linux builds require an X11 session for window input and capture.</p>
     </div>
+
     <div class="feature-grid">
-      <article><span class="tag">Control</span><h3>Key or scroll</h3><p>Press Up, Down, Left, or Right, or scroll the mouse wheel by as many notches as you like.</p></article>
-      <article><span class="tag">Capture</span><h3>Exactly the area you want</h3><p>The whole window, just its content, the entire screen, or a box you draw with the mouse.</p></article>
-      <article><span class="tag">Smart stop</span><h3>Continue until done</h3><p>When the screen stops changing a few times in a row, AutoShot knows it reached the end, stops, and never saves duplicates.</p></article>
-      <article><span class="tag">Formats</span><h3>PNG, JPG, PDF and more</h3><p>PNG, JPG, BMP, TIFF, GIF, or PDF, either every page in one file or one PDF per shot.</p></article>
-      <article><span class="tag">Hotkey</span><h3>Start from anywhere</h3><p>A global start/stop hotkey you choose yourself (F8 by default), so you never have to leave the app you're capturing.</p></article>
-      <article><span class="tag">Light</span><h3>Tiny and portable</h3><p>The Windows version is a single 300 KB file with no installer. Linux builds are self-contained, with nothing else to install.</p></article>
+      <a id="dl-sourceforge-main" class="download-card" href="https://sourceforge.net/projects/autoshot/" rel="noopener">
+        <div>
+          <span class="lane-badge labs">SourceForge</span>
+          <div class="download-os">SourceForge Mirror</div>
+          <p class="download-meta">All releases (v1.1.0+), SHA256SUMS.txt &amp; platform auto-detect</p>
+        </div>
+        <span class="download-cta">Open on SourceForge →</span>
+      </a>
+
+      <a id="dl-windows" class="download-card" href="https://sourceforge.net/projects/autoshot/files/v1.1.0/AutoShot-windows-x64.zip/download" rel="noopener">
+        <div>
+          <span class="lane-badge labs">Windows</span>
+          <div class="download-os">Windows 10 / 11</div>
+          <p class="download-meta">64-bit · .zip · ~261 KB · single portable AutoShot.exe</p>
+        </div>
+        <span class="download-cta">Download for Windows →</span>
+      </a>
+
+      <a id="dl-linux-x64" class="download-card" href="https://sourceforge.net/projects/autoshot/files/v1.1.0/AutoShot-linux-x86_64.tar.gz/download" rel="noopener">
+        <div>
+          <span class="lane-badge labs">Linux x86_64</span>
+          <div class="download-os">Linux Intel / AMD</div>
+          <p class="download-meta">.tar.gz · 32.9 MB · self-contained X11 archive</p>
+        </div>
+        <span class="download-cta">Download for Linux x64 →</span>
+      </a>
+
+      <a id="dl-linux-arm64" class="download-card" href="https://sourceforge.net/projects/autoshot/files/v1.1.0/AutoShot-linux-aarch64.tar.gz/download" rel="noopener">
+        <div>
+          <span class="lane-badge labs">Linux ARM64</span>
+          <div class="download-os">Raspberry Pi &amp; ARM</div>
+          <p class="download-meta">.tar.gz · 19.2 MB · self-contained X11 archive</p>
+        </div>
+        <span class="download-cta">Download for ARM64 →</span>
+      </a>
     </div>
   </section>
 
-  <section class="shell work">
-    <div class="section-head">
-      <p class="kicker">Screenshots</p>
-      <h2>Everything on one screen.</h2>
+  <section id="features" class="studio-section" aria-labelledby="features-heading" tabindex="-1">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Capabilities</span>
+        <h2 id="features-heading">Stop paging and screenshotting by hand.</h2>
+      </div>
+      <p class="section-summary">Designed for long documents, e-books, slide decks, galleries, and chat histories.</p>
     </div>
-    <div class="shots">
-      <figure><img src="./assets/screenshot-windows.png" alt="AutoShot settings window on Windows" loading="lazy" width="1056" height="802"><figcaption>Windows 11</figcaption></figure>
-      <figure><img src="./assets/screenshot-linux.png" alt="AutoShot settings window on Linux, with a drawn region selected" loading="lazy" width="836" height="441"><figcaption>Linux (X11), with a drawn capture region</figcaption></figure>
+
+    <div class="feature-grid">
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Control</span>
+          <h3>Key or scroll</h3>
+          <p>Send Up, Down, Left, or Right arrow keys, or scroll the mouse wheel by a configurable notch count.</p>
+        </div>
+      </article>
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Capture</span>
+          <h3>Exact region selection</h3>
+          <p>Capture the whole window, its inner content area, the full monitor, or a custom box drawn with your pointer.</p>
+        </div>
+      </article>
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Smart stop</span>
+          <h3>Automatic end detection</h3>
+          <p>Stops automatically when consecutive frames stop changing so you never save trailing duplicates.</p>
+        </div>
+      </article>
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Output</span>
+          <h3>PNG, JPG, PDF &amp; more</h3>
+          <p>Export individual images or compile an entire multi-page document directly into a single PDF.</p>
+        </div>
+      </article>
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Global hotkey</span>
+          <h3>Trigger from anywhere</h3>
+          <p>Start and stop capture with a customizable global shortcut (<code>F8</code> by default) without switching focus.</p>
+        </div>
+      </article>
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Footprint</span>
+          <h3>Tiny &amp; self-contained</h3>
+          <p>Under 300 KB standalone executable on Windows and self-contained archives on Linux with zero runtime setup.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="shell work">
-    <div class="section-head">
-      <p class="kicker">How it works</p>
-      <h2>Five steps, then let it run.</h2>
+  <section class="studio-section" aria-labelledby="screenshots-heading">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Interface</span>
+        <h2 id="screenshots-heading">Everything on one screen.</h2>
+      </div>
     </div>
-    <ol class="steps">
-      <li><b>Pick the window</b> from the list, or click <i>Pick…</i> and then click the window you want.</li>
-      <li><b>Choose the action</b>: an arrow key or mouse-wheel scrolling, and which direction.</li>
-      <li><b>Set the timing.</b> <i>Wait after action</i> gives the page time to settle before each screenshot.</li>
-      <li><b>Choose what to capture</b>, the file type, and where to save.</li>
-      <li><b>Press your hotkey</b> anywhere to start. Press it again to stop, or let <i>Continue until done</i> stop it for you.</li>
+
+    <div class="shot-grid">
+      <figure class="shot-figure">
+        <button id="open-shot-win" class="preview-trigger" type="button" commandfor="lightbox-win" command="show-modal" aria-label="Enlarge AutoShot Windows 11 screenshot">
+          <img
+            src="./assets/screenshot-windows.webp"
+            srcset="./assets/screenshot-windows-640w.webp 640w, ./assets/screenshot-windows.webp 1056w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="AutoShot settings window on Windows 11"
+            width="1056"
+            height="802"
+            loading="lazy"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Windows 11</span> <span>Select to inspect</span></figcaption>
+      </figure>
+
+      <figure class="shot-figure">
+        <button id="open-shot-linux" class="preview-trigger" type="button" commandfor="lightbox-linux" command="show-modal" aria-label="Enlarge AutoShot Linux X11 screenshot">
+          <img
+            src="./assets/screenshot-linux.webp"
+            srcset="./assets/screenshot-linux-640w.webp 640w, ./assets/screenshot-linux.webp 836w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="AutoShot settings window on Linux X11 with a drawn region selected"
+            width="836"
+            height="441"
+            loading="lazy"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Linux (X11) · Drawn capture region</span> <span>Select to inspect</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="studio-section" aria-labelledby="steps-heading">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Workflow</span>
+        <h2 id="steps-heading">Five steps, then let it run.</h2>
+      </div>
+    </div>
+
+    <ol class="steps-list" role="list">
+      <li><strong>Pick the target window</strong> from the dropdown list or click <em>Pick…</em> to select it directly on screen.</li>
+      <li><strong>Choose the paging action:</strong> arrow key press or mouse-wheel scroll in your chosen direction.</li>
+      <li><strong>Set the settle delay</strong> so pages finish rendering before each capture is recorded.</li>
+      <li><strong>Select capture bounds &amp; output format</strong> (PNG, JPG, single-file PDF, and destination folder).</li>
+      <li><strong>Press your global hotkey</strong> to start—let <em>Continue until done</em> detect the end automatically.</li>
     </ol>
   </section>
 
-  <section class="shell work">
-    <div class="section-head">
-      <p class="kicker">Install</p>
-      <h2>Up and running in seconds.</h2>
+  <dialog id="lightbox-win" class="lightbox" closedby="any" aria-labelledby="lightbox-win-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-win-title">AutoShot · Windows 11</h2>
+      <button id="close-shot-win" class="lightbox-close" type="button" commandfor="lightbox-win" command="close">Close</button>
     </div>
-    <div class="work-grid">
-      <article>
-        <span>Windows</span>
-        <h3>Unzip and run</h3>
-        <p>Extract the zip and open <code>AutoShot.exe</code>. If SmartScreen warns about an unrecognized app, choose <i>More info → Run anyway</i>.</p>
-      </article>
-      <article>
-        <span>Linux</span>
-        <h3>Extract and launch</h3>
-        <p>Run <code>./autoshot</code> from the extracted folder. Use <code>./install.sh</code> to add AutoShot to your app menu.</p>
-      </article>
+    <div class="lightbox-stage">
+      <img src="./assets/screenshot-windows.webp" alt="AutoShot settings window on Windows 11" width="1056" height="802" loading="lazy" decoding="async">
     </div>
-<pre>tar -xzf AutoShot-linux-x86_64.tar.gz
-cd AutoShot-linux-x86_64
-./autoshot          # run it
-./install.sh        # optional: add to your app menu</pre>
-  </section>
+    <div class="lightbox-footer">
+      <span>Single-screen capture &amp; automation configuration</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
+
+  <dialog id="lightbox-linux" class="lightbox" closedby="any" aria-labelledby="lightbox-linux-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-linux-title">AutoShot · Linux (X11)</h2>
+      <button id="close-shot-linux" class="lightbox-close" type="button" commandfor="lightbox-linux" command="close">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <img src="./assets/screenshot-linux.webp" alt="AutoShot settings window on Linux X11 with a drawn capture region" width="836" height="441" loading="lazy" decoding="async">
+    </div>
+    <div class="lightbox-footer">
+      <span>Custom drawn region capture on Linux X11</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
 </main>
 
-<footer>
-  <div class="shell footer-row">
-    <div><strong>AutoShot</strong><br><span>A Goza Labs project · Goza Interactive</span></div>
-    <div><a href="../">Goza Labs</a> · <a href="https://github.com/rgoza1996/AutoShot-Releases/issues">Report an issue</a> · <a href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div><span class="footer-name">AutoShot</span> &nbsp; · &nbsp; Goza Labs · Goza Interactive</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a id="as-footer-sf" href="https://sourceforge.net/projects/autoshot/" rel="noopener">SourceForge</a>
+        <a id="as-footer-files" href="https://sourceforge.net/projects/autoshot/files/" rel="noopener">All releases &amp; checksums</a>
+        <a id="as-footer-labs" href="../">Goza Labs</a>
+        <a id="as-footer-hub" href="../../">Goza Interactive</a>
+        <a id="as-footer-email" href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a>
+      </nav>
+    </div>
   </div>
 </footer>
 </body>

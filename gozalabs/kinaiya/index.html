@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="text-scale" content="scale">
+  <meta name="color-scheme" content="light dark">
+  <script>try{const s=localStorage.getItem("color-scheme");if(s==="light"||s==="dark")document.querySelector("meta[name=\"color-scheme\"]").content=s;}catch{}</script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCF9F2">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151310">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'inline-speculation-rules' 'sha256-ZV62QEBcRpEGfPKCC1icWMtMogYELaRWrcXrfesczKY=' 'sha256-umyWb3MhAybDYKUi7iaU3at3QjfuktpXma5m3rOjI3w='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="description" content="Kinaiya by Goza Labs: a local-first AI platform pairing an expressive real-time voice companion (Converse) with a sandboxed work agent (Agent).">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kinaiya | Goza Labs">
+  <meta property="og:description" content="A companion to talk to. An agent to get things done. Local-first AI platform by Goza Labs.">
+  <meta property="og:url" content="https://rgoza1996.github.io/gozalabs/kinaiya/">
+  <meta property="og:image" content="https://rgoza1996.github.io/gozalabs/kinaiya/assets/kinaiya-home.webp">
+  <link rel="canonical" href="https://rgoza1996.github.io/gozalabs/kinaiya/">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <title>Kinaiya | Goza Labs</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*assets/*"}},{"not":{"href_matches":"/app-ads.txt"}}]},"eagerness":"moderate"}]}</script>
+  <script type="module" src="../../site.js"></script>
+</head>
+<body class="labs-page">
+<a id="skip-to-main" class="skip-link visually-hidden" href="#kinaiya-title">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a id="nav-kinaiya-labs" class="wordmark" href="../">
+      <span class="brand-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      Goza Labs
+    </a>
+    <div class="header-controls">
+      <nav class="header-nav" aria-label="Primary" data-scrollspy>
+        <a id="nav-kn-interface" href="#interface">Interface</a>
+        <a id="nav-kn-architecture" href="#architecture">Architecture</a>
+        <a id="nav-kn-repo" href="https://github.com/rgoza1996/Kinaiya" rel="noopener">GitHub repo</a>
+        <a id="nav-kn-labs" href="../">All Labs</a>
+      </nav>
+      <button id="theme-toggle-btn" class="theme-toggle" type="button" data-theme-toggle>
+        <span class="when-light">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <span>Dark<span class="visually-hidden"> theme</span></span>
+        </span>
+        <span class="when-dark">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.93 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span>Light<span class="visually-hidden"> theme</span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumbs">
+    <ol>
+      <li><a id="bc-interactive" href="../../">Goza Interactive</a></li>
+      <li><a id="bc-labs" href="../">Goza Labs</a></li>
+      <li><a id="bc-current" href="./" aria-current="page">Kinaiya</a></li>
+    </ol>
+  </nav>
+
+  <section class="project-hero" aria-labelledby="kinaiya-title">
+    <span class="rubric labs-rubric">Goza Labs · Local-First AI Platform · In Development</span>
+    <h1 id="kinaiya-title" tabindex="-1">Kinaiya</h1>
+    <p class="hero-lead">A companion to talk to. An agent to get things done. Kinaiya pairs a customizable real-time voice character (<strong>Converse</strong>) with an independent, sandboxed work agent (<strong>Agent</strong>) inside one local-first workspace—backed by the local or disclosed cloud models you choose.</p>
+    <div class="actions">
+      <a id="cta-kinaiya-repo" class="button" href="https://github.com/rgoza1996/Kinaiya" rel="noopener">View repository on GitHub</a>
+      <a id="cta-kinaiya-interface" class="button secondary" href="#interface">Inspect application UI</a>
+    </div>
+  </section>
+
+  <dl class="project-facts" aria-label="Kinaiya platform details">
+    <div>
+      <dt>Core services</dt>
+      <dd>Session · Agent · Converse · Decisions</dd>
+    </div>
+    <div>
+      <dt>Tool isolation</dt>
+      <dd>bubblewrap + libseccomp2 sandbox</dd>
+    </div>
+    <div>
+      <dt>Default authority</dt>
+      <dd>Loopback-bound · One-use SHA-256 permits</dd>
+    </div>
+    <div>
+      <dt>Source code</dt>
+      <dd>Public on GitHub (<code>rgoza1996/Kinaiya</code>)</dd>
+    </div>
+  </dl>
+
+  <section id="interface" class="studio-section" aria-labelledby="interface-heading" tabindex="-1">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Owner interface</span>
+        <h2 id="interface-heading">Conversation and execution, side by side.</h2>
+      </div>
+      <p class="section-summary">Actual application captures across Home, Converse, Agent workspace, and Options.</p>
+    </div>
+
+    <div class="shot-grid">
+      <figure class="shot-figure">
+        <button id="open-kn-home" class="preview-trigger" type="button" commandfor="lightbox-kn-home" command="show-modal" aria-label="Enlarge Kinaiya Home interface screenshot">
+          <img
+            src="./assets/kinaiya-home.webp"
+            srcset="./assets/kinaiya-home-640w.webp 640w, ./assets/kinaiya-home.webp 2575w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="Kinaiya Home screen showing character artwork beneath the moon and workspace navigation"
+            width="2575"
+            height="1416"
+            fetchpriority="high"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Home</span> <span>Select to inspect</span></figcaption>
+      </figure>
+
+      <figure class="shot-figure">
+        <button id="open-kn-converse" class="preview-trigger" type="button" commandfor="lightbox-kn-converse" command="show-modal" aria-label="Enlarge Kinaiya Converse view screenshot">
+          <img
+            src="./assets/kinaiya-converse.webp"
+            srcset="./assets/kinaiya-converse-640w.webp 640w, ./assets/kinaiya-converse.webp 2575w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="Kinaiya Converse view with character portrait and live dialogue workspace"
+            width="2575"
+            height="1416"
+            loading="lazy"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Converse</span> <span>Select to inspect</span></figcaption>
+      </figure>
+
+      <figure class="shot-figure">
+        <button id="open-kn-agent" class="preview-trigger" type="button" commandfor="lightbox-kn-agent" command="show-modal" aria-label="Enlarge Kinaiya Agent workspace screenshot">
+          <img
+            src="./assets/kinaiya-agent.webp"
+            srcset="./assets/kinaiya-agent-640w.webp 640w, ./assets/kinaiya-agent.webp 2575w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="Kinaiya Agent workspace with resizable session and task panels"
+            width="2575"
+            height="1416"
+            loading="lazy"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Agent workspace</span> <span>Select to inspect</span></figcaption>
+      </figure>
+
+      <figure class="shot-figure">
+        <button id="open-kn-options" class="preview-trigger" type="button" commandfor="lightbox-kn-options" command="show-modal" aria-label="Enlarge Kinaiya Options screen screenshot">
+          <img
+            src="./assets/kinaiya-options.webp"
+            srcset="./assets/kinaiya-options-640w.webp 640w, ./assets/kinaiya-options.webp 2575w"
+            sizes="(max-width: 48em) 92vw, 520px"
+            alt="Kinaiya Options category navigation for models, voice, permissions, and host services"
+            width="2575"
+            height="1416"
+            loading="lazy"
+            decoding="async">
+          <span class="zoom-chip" aria-hidden="true">Enlarge</span>
+        </button>
+        <figcaption><span>Options &amp; subsystem controls</span> <span>Select to inspect</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="architecture" class="studio-section" aria-labelledby="architecture-heading" tabindex="-1">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Architecture</span>
+        <h2 id="architecture-heading">Decoupled dual-loop design.</h2>
+      </div>
+      <p class="section-summary">Model output alone never creates tool authorization; conversation, routing, execution, and state stay cleanly separated.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Converse · :8762</span>
+          <h3>Voice &amp; persona</h3>
+          <p>Handles expressive character dialogue, live speech listening windows, STT/TTS bridges, and curated recall—completely isolated from tool permissions and optional when you only want Agent.</p>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Agent · :8761</span>
+          <h3>Sandboxed execution</h3>
+          <p>Runs coding, repository analysis, file edits, adaptive harnesses, skills, and MCP tools inside <code>bubblewrap</code> + <code>libseccomp2</code> with explicit owner approval gates.</p>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Decisions · :8763</span>
+          <h3>Advisory turn routing</h3>
+          <p>Classifies finalized turns and live speech windows (<code>ignore</code>, <code>queue</code>, <code>steer</code>, <code>interrupt</code>) without ever speaking as the character or granting execution rights.</p>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-card-head">
+          <span class="lane-badge labs">Session · :8760</span>
+          <h3>Cryptographic permits</h3>
+          <p>Maintains the monotonic SQLite transcript journal, typed disclosure scopes (<code>local-only</code> by default), and one-use <code>SHA-256</code> permits bound to exact tool arguments and revisions.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="repository" class="studio-section" aria-labelledby="repo-heading">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow labs-eyebrow">Open repository</span>
+        <h2 id="repo-heading">Source, architecture &amp; roadmap.</h2>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <a id="card-kinaiya-github" class="download-card" href="https://github.com/rgoza1996/Kinaiya" rel="noopener">
+        <div>
+          <span class="lane-badge labs">GitHub Repository</span>
+          <div class="download-os">rgoza1996/Kinaiya</div>
+          <p class="download-meta">Host services, Flutter owner UI, CLI installer, capture manifests, and architecture documentation</p>
+        </div>
+        <span class="download-cta">Open repository on GitHub →</span>
+      </a>
+
+      <a id="card-kinaiya-roadmap" class="download-card" href="https://github.com/rgoza1996/Kinaiya/blob/main/Roadmap.md" rel="noopener">
+        <div>
+          <span class="lane-badge labs">Documentation</span>
+          <div class="download-os">Project Roadmap</div>
+          <p class="download-meta">Upcoming milestones for adaptive harnesses, native voice pipelines, and evaluation benchmarks</p>
+        </div>
+        <span class="download-cta">Read Roadmap on GitHub →</span>
+      </a>
+    </div>
+  </section>
+
+  <dialog id="lightbox-kn-home" class="lightbox" closedby="any" aria-labelledby="lightbox-kn-home-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-kn-home-title">Kinaiya · Home</h2>
+      <button id="close-kn-home" class="lightbox-close" type="button" commandfor="lightbox-kn-home" command="close">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <img src="./assets/kinaiya-home.webp" alt="Kinaiya Home screen showing character artwork beneath the moon and workspace navigation" width="2575" height="1416" loading="lazy" decoding="async">
+    </div>
+    <div class="lightbox-footer">
+      <span>Application capture · November 1, 2026 UI refresh</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
+
+  <dialog id="lightbox-kn-converse" class="lightbox" closedby="any" aria-labelledby="lightbox-kn-converse-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-kn-converse-title">Kinaiya · Converse</h2>
+      <button id="close-kn-converse" class="lightbox-close" type="button" commandfor="lightbox-kn-converse" command="close">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <img src="./assets/kinaiya-converse.webp" alt="Kinaiya Converse view with character portrait and live dialogue workspace" width="2575" height="1416" loading="lazy" decoding="async">
+    </div>
+    <div class="lightbox-footer">
+      <span>Character dialogue &amp; voice companion view</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
+
+  <dialog id="lightbox-kn-agent" class="lightbox" closedby="any" aria-labelledby="lightbox-kn-agent-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-kn-agent-title">Kinaiya · Agent Workspace</h2>
+      <button id="close-kn-agent" class="lightbox-close" type="button" commandfor="lightbox-kn-agent" command="close">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <img src="./assets/kinaiya-agent.webp" alt="Kinaiya Agent workspace with resizable session and task panels" width="2575" height="1416" loading="lazy" decoding="async">
+    </div>
+    <div class="lightbox-footer">
+      <span>Sandboxed coding &amp; task execution workspace</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
+
+  <dialog id="lightbox-kn-options" class="lightbox" closedby="any" aria-labelledby="lightbox-kn-options-title">
+    <div class="lightbox-header">
+      <h2 id="lightbox-kn-options-title">Kinaiya · Options</h2>
+      <button id="close-kn-options" class="lightbox-close" type="button" commandfor="lightbox-kn-options" command="close">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <img src="./assets/kinaiya-options.webp" alt="Kinaiya Options category navigation for models, voice, permissions, and host services" width="2575" height="1416" loading="lazy" decoding="async">
+    </div>
+    <div class="lightbox-footer">
+      <span>Subsystem configuration, providers &amp; permission controls</span>
+      <span>Press Esc or click outside to close</span>
+    </div>
+  </dialog>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div><span class="footer-name">Kinaiya</span> &nbsp; · &nbsp; Goza Labs · Goza Interactive</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a id="kn-footer-repo" href="https://github.com/rgoza1996/Kinaiya" rel="noopener">GitHub Repository</a>
+        <a id="kn-footer-labs" href="../">Goza Labs</a>
+        <a id="kn-footer-hub" href="../../">Goza Interactive</a>
+        <a id="kn-footer-email" href="mailto:rogiegoza@gmail.com">rogiegoza@gmail.com</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
